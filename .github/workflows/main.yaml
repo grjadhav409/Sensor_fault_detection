@@ -3,7 +3,7 @@ name: workflow
 on:
   push:
     branches:
-      - main
+      - main # triger
 
 permissions:
   id-token: write
@@ -12,22 +12,22 @@ permissions:
 
 jobs:
  build-and-push-ecr-image:
-  name: Continuous Delivery
-  runs-on: ubuntu-latest
-  steps:
-   - name: Checkout Code
+  name: Continuous Delivery 
+  runs-on: ubuntu-latest # v machine 
+  steps: 
+   - name: Checkout Code # bring code to vm
      uses: actions/checkout@v3
-   - name: Install Utilities
+   - name: Install Utilities # intall some softwarees
      run: |
       sudo apt-get update
       sudo apt-get install -y jq unzip
 
    - name: Configure AWS credentials
-     uses: aws-actions/configure-aws-credentials@v1
+     uses: aws-actions/configure-aws-credentials@v1 
      with:
       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      aws-region: ${{ secrets.AWS_REGION }}
+      aws-region: ${{ secrets.AWS_REGION }} 
 
    - name: Login to Amazon ECR
      id: login-ecr

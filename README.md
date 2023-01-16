@@ -18,6 +18,7 @@ python main.py
 To download your dataset
 
 ```
+
 wget https://raw.githubusercontent.com/avnyadav/sensor-fault-detection/main/aps_failure_training_set1.csv
 ```
 
@@ -98,4 +99,8 @@ AWS_ECR_LOGIN_URI=
 ECR_REPOSITORY_NAME=
 BUCKET_NAME=
 MONGO_DB_URL=
+
+
+
+jskdnaknknnanknkna
 ```
